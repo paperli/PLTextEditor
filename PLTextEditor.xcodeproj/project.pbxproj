@@ -12,6 +12,8 @@
 		20F2328B1ECDF929002B6834 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F232891ECDF929002B6834 /* Main.storyboard */; };
 		20F2328D1ECDF929002B6834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F2328C1ECDF929002B6834 /* Assets.xcassets */; };
 		20F232901ECDF929002B6834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F2328E1ECDF929002B6834 /* LaunchScreen.storyboard */; };
+		20F232981ECDFE14002B6834 /* PLRichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F232971ECDFE14002B6834 /* PLRichTextView.swift */; };
+		20F2329A1ECE0395002B6834 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F232991ECE0395002B6834 /* UIImage+Gradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		20F2328C1ECDF929002B6834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20F2328F1ECDF929002B6834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20F232911ECDF929002B6834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20F232971ECDFE14002B6834 /* PLRichTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLRichTextView.swift; sourceTree = "<group>"; };
+		20F232991ECE0395002B6834 /* UIImage+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gradient.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				20F232851ECDF929002B6834 /* AppDelegate.swift */,
 				20F232871ECDF929002B6834 /* ViewController.swift */,
+				20F232991ECE0395002B6834 /* UIImage+Gradient.swift */,
+				20F232971ECDFE14002B6834 /* PLRichTextView.swift */,
 				20F232891ECDF929002B6834 /* Main.storyboard */,
 				20F2328C1ECDF929002B6834 /* Assets.xcassets */,
 				20F2328E1ECDF929002B6834 /* LaunchScreen.storyboard */,
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F232881ECDF929002B6834 /* ViewController.swift in Sources */,
+				20F232981ECDFE14002B6834 /* PLRichTextView.swift in Sources */,
 				20F232861ECDF929002B6834 /* AppDelegate.swift in Sources */,
+				20F2329A1ECE0395002B6834 /* UIImage+Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PLTextEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,95 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-pZ-wmi">
+                                <rect key="frame" x="160.5" y="311" width="53" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="K5o-Ac-qCK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="il1-a6-GkU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="INPUT"/>
+                                <connections>
+                                    <action selector="addTextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qlw-f1-6TP"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-iq-f6M" userLabel="Edit tool view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlo-LD-xy0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOC-gt-GJH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EE7-2j-AZ3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="XVT-2J-tqn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="light"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="NEW ENTRY" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4p3-c9-imy" customClass="PLRichTextView" customModule="PLTextEditor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="290" id="DmX-BG-0Lz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-u7-qUq">
+                                        <rect key="frame" x="243" y="32" width="118" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="114" id="5Nh-L7-gO5"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="colorSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="i9M-8y-S3M"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4p3-c9-imy" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" id="5h0-Fa-Wje"/>
+                                    <constraint firstItem="vlo-LD-xy0" firstAttribute="leading" secondItem="dAe-iq-f6M" secondAttribute="leading" id="7aS-Bu-hXd"/>
+                                    <constraint firstItem="vlo-LD-xy0" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" id="D0l-Qb-UFP"/>
+                                    <constraint firstItem="OdR-u7-qUq" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" constant="32" id="QBA-gW-wk2"/>
+                                    <constraint firstAttribute="bottom" secondItem="vlo-LD-xy0" secondAttribute="bottom" id="XhK-Z1-T4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="4p3-c9-imy" secondAttribute="trailing" id="Yph-XW-KzS"/>
+                                    <constraint firstItem="4p3-c9-imy" firstAttribute="leading" secondItem="dAe-iq-f6M" secondAttribute="leading" id="fks-Xq-K9Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="OdR-u7-qUq" secondAttribute="trailing" constant="16" id="pYZ-dd-isy"/>
+                                    <constraint firstAttribute="trailing" secondItem="vlo-LD-xy0" secondAttribute="trailing" id="x4u-Qp-qEg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="bottom" id="6ek-pg-my3"/>
+                            <constraint firstItem="dAe-iq-f6M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DfW-IR-yD2"/>
+                            <constraint firstItem="UXP-pZ-wmi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4N-0q-vXG"/>
+                            <constraint firstItem="UXP-pZ-wmi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FKG-Gp-dzW"/>
+                            <constraint firstItem="dAe-iq-f6M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fK4-Yt-F0H"/>
+                            <constraint firstAttribute="trailing" secondItem="dAe-iq-f6M" secondAttribute="trailing" id="oEQ-6N-aSG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editorView" destination="dAe-iq-f6M" id="Fas-yJ-fuM"/>
+                        <outlet property="slider" destination="OdR-u7-qUq" id="sjE-vK-CoX"/>
+                        <outlet property="textView" destination="4p3-c9-imy" id="zuP-Mv-LnE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
 </document>
