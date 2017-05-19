@@ -41,23 +41,11 @@ class ViewController: UIViewController {
         layer.cornerRadius = 2
         slider.layer.insertSublayer(layer, at: 0)
         
-        // append toolbar on keyboard
-        let inputToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
-        
-        inputToolbar.items = [UIBarButtonItem(title: "Bold", style: .done, target: self, action: #selector(ViewController.makeBold)), UIBarButtonItem(title: "Italic", style: .done, target: self, action: #selector(ViewController.makeItalic))]
-        textView.inputAccessoryView = inputToolbar
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        let tv = object as! UITextView
-        var topCorrect = (tv.bounds.size.height - tv.contentSize.height * tv.zoomScale) / 2
-        topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
-        tv.setContentOffset(CGPoint(x:tv.contentOffset.x, y:-topCorrect), animated: false)
     }
     
     @IBAction func addTextAction(_ sender: UIButton) {
@@ -77,49 +65,6 @@ class ViewController: UIViewController {
         slider.thumbTintColor = textView.textColor
     }
     
-    func makeBold(){
-        let str = textView.text
-        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
-        let font = attributedString.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as! UIFont
         
-        if isBold {
-            var symTraits = font.fontDescriptor.symbolicTraits
-            symTraits.remove([.traitBold])
-            let fontDescriptorVar = UIFontDescriptor().withSymbolicTraits(symTraits)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont(descriptor: fontDescriptorVar!, size: 26) , range: NSRange(location: 0, length: (str?.characters.count)!) )
-            
-        } else {
-            var symTraits = font.fontDescriptor.symbolicTraits
-            symTraits.insert([.traitBold])
-            let fontDescriptorVar = UIFontDescriptor().withSymbolicTraits(symTraits)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont(descriptor: fontDescriptorVar!, size: 26) , range: NSRange(location: 0, length: (str?.characters.count)!) )
-        }
-        isBold = !isBold
-        textView.attributedText = attributedString
-    }
-    
-    func makeItalic(){
-        let str = textView.text
-        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
-        let font = attributedString.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as! UIFont
-        
-        if isItalic {
-            var symTraits = font.fontDescriptor.symbolicTraits
-            symTraits.remove([.traitItalic])
-            let fontDescriptorVar = UIFontDescriptor().withSymbolicTraits(symTraits)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont(descriptor: fontDescriptorVar!, size: 26) , range: NSRange(location: 0, length: (str?.characters.count)!) )
-            
-        } else {
-            var symTraits = font.fontDescriptor.symbolicTraits
-            symTraits.insert([.traitItalic])
-            let fontDescriptorVar = UIFontDescriptor().withSymbolicTraits(symTraits)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont(descriptor: fontDescriptorVar!, size: 26) , range: NSRange(location: 0, length: (str?.characters.count)!) )
-        }
-        
-        isItalic = !isItalic
-        
-        textView.attributedText = attributedString
-    }
-    
 }
 
