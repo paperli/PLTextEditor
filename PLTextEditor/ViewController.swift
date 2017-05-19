@@ -53,8 +53,17 @@ class ViewController: UIViewController {
         slider.setValue(1, animated: false)
         self.colorSliderValueChanged(slider)
         
+        
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        slider.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
+        slider.transform = CGAffineTransform(rotationAngle: 90*CGFloat.pi/180)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

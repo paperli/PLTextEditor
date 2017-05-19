@@ -67,9 +67,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-u7-qUq">
-                                        <rect key="frame" x="207" y="32" width="154" height="31"/>
+                                        <rect key="frame" x="266" y="208" width="154" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="5Nh-L7-gO5"/>
+                                            <constraint firstAttribute="width" constant="150" id="HIb-vD-38A"/>
                                         </constraints>
                                         <connections>
                                             <action selector="colorSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="i9M-8y-S3M"/>
@@ -81,11 +81,11 @@
                                     <constraint firstItem="4p3-c9-imy" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" id="5h0-Fa-Wje"/>
                                     <constraint firstItem="vlo-LD-xy0" firstAttribute="leading" secondItem="dAe-iq-f6M" secondAttribute="leading" id="7aS-Bu-hXd"/>
                                     <constraint firstItem="vlo-LD-xy0" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" id="D0l-Qb-UFP"/>
-                                    <constraint firstItem="OdR-u7-qUq" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" constant="32" id="QBA-gW-wk2"/>
+                                    <constraint firstItem="OdR-u7-qUq" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="top" constant="208" id="EGN-t7-Goi"/>
+                                    <constraint firstAttribute="trailing" secondItem="OdR-u7-qUq" secondAttribute="trailing" constant="-43" id="HW0-Zn-lMK"/>
                                     <constraint firstAttribute="bottom" secondItem="vlo-LD-xy0" secondAttribute="bottom" id="XhK-Z1-T4S"/>
                                     <constraint firstAttribute="trailing" secondItem="4p3-c9-imy" secondAttribute="trailing" id="Yph-XW-KzS"/>
                                     <constraint firstItem="4p3-c9-imy" firstAttribute="leading" secondItem="dAe-iq-f6M" secondAttribute="leading" id="fks-Xq-K9Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="OdR-u7-qUq" secondAttribute="trailing" constant="16" id="pYZ-dd-isy"/>
                                     <constraint firstAttribute="trailing" secondItem="vlo-LD-xy0" secondAttribute="trailing" id="x4u-Qp-qEg"/>
                                 </constraints>
                             </view>
