@@ -12,6 +12,8 @@ class PLRichTextView: UITextView, UITextViewDelegate {
     
     var isBold:Bool = false
     var isItalic:Bool = false
+    var boldButton:UIButton!
+    var italicButton:UIButton!
     
     required init(frame: CGRect) {
         super.init(frame: frame, textContainer: nil)
@@ -36,12 +38,26 @@ class PLRichTextView: UITextView, UITextViewDelegate {
         // Make text vertical center-aligned
         var top = (bounds.size.height - contentSize.height * zoomScale) / 2.0
         top = top < 0.0 ? 0.0 : top
-        self.setContentOffset(CGPoint(x: contentOffset.x, y: -top), animated: false)
+        self.contentInset = UIEdgeInsets(top: top, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
         
         // Append keyboard toolbar
         let inputToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         
-        inputToolbar.items = [UIBarButtonItem(title: "Bold", style: .done, target: self, action: #selector(PLRichTextView.makeBold)), UIBarButtonItem(title: "Italic", style: .done, target: self, action: #selector(PLRichTextView.makeItalic))]
+        let buttonsGroupView:UIView = UIView(frame: CGRect(x:0,y:0,width:88,height:44))
+        boldButton = UIButton(type: .system)
+        boldButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        boldButton.addTarget(self, action: #selector(PLRichTextView.makeBold), for: .touchUpInside)
+        boldButton.setImage(UIImage(named:"icon_bold"), for: .normal)
+        
+        italicButton = UIButton(type: .system)
+        italicButton.frame = CGRect(x: 44, y: 0, width: 44, height: 44)
+        italicButton.addTarget(self, action: #selector(PLRichTextView.makeItalic), for: .touchUpInside)
+        italicButton.setImage(UIImage(named:"icon_italic"), for: .normal)
+        
+        buttonsGroupView.addSubview(boldButton)
+        buttonsGroupView.addSubview(italicButton)
+        
+        inputToolbar.items = [UIBarButtonItem(customView:buttonsGroupView)]
         self.inputAccessoryView = inputToolbar
         
         // Add observer to make text verical center-aligned
@@ -61,7 +77,7 @@ class PLRichTextView: UITextView, UITextViewDelegate {
         let tv = object as! UITextView
         var top = (bounds.size.height - contentSize.height * zoomScale) / 2.0
         top = top < 0.0 ? 0.0 : top
-        tv.setContentOffset(CGPoint(x: contentOffset.x, y: -top), animated: false)
+        tv.contentInset = UIEdgeInsets(top: top, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
     }
     
     deinit {
@@ -86,6 +102,7 @@ class PLRichTextView: UITextView, UITextViewDelegate {
             attributedString.addAttribute(NSFontAttributeName, value: UIFont(descriptor: fontDescriptorVar!, size: 26) , range: NSRange(location: 0, length: (str?.characters.count)!) )
         }
         isBold = !isBold
+        boldButton.isSelected = isBold
         self.attributedText = attributedString
     }
     
@@ -108,7 +125,7 @@ class PLRichTextView: UITextView, UITextViewDelegate {
         }
         
         isItalic = !isItalic
-        
+        italicButton.isSelected = isItalic
         self.attributedText = attributedString
     }
 

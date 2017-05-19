@@ -55,21 +55,21 @@
                                                 </visualEffectView>
                                             </subviews>
                                         </view>
-                                        <blurEffect style="light"/>
+                                        <blurEffect style="dark"/>
                                     </visualEffectView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="NEW ENTRY" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4p3-c9-imy" customClass="PLRichTextView" customModule="PLTextEditor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="290" id="DmX-BG-0Lz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-u7-qUq">
-                                        <rect key="frame" x="243" y="32" width="118" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-u7-qUq">
+                                        <rect key="frame" x="207" y="32" width="154" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="114" id="5Nh-L7-gO5"/>
+                                            <constraint firstAttribute="width" constant="150" id="5Nh-L7-gO5"/>
                                         </constraints>
                                         <connections>
                                             <action selector="colorSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="i9M-8y-S3M"/>
@@ -90,7 +90,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dAe-iq-f6M" secondAttribute="bottom" id="6ek-pg-my3"/>
                             <constraint firstItem="dAe-iq-f6M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DfW-IR-yD2"/>
