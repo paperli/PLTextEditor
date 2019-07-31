@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var editorView: UIView!
+    @IBOutlet weak var label: UILabel!
     var isBold = false
     var isItalic = false
     let SLIDER_BACKGROUND_HEIGHT:CGFloat = 8.0
@@ -53,8 +54,6 @@ class ViewController: UIViewController {
         slider.setValue(1, animated: false)
         self.colorSliderValueChanged(slider)
         
-        
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +85,9 @@ class ViewController: UIViewController {
         slider.thumbTintColor = textView.textColor
     }
     
+    @IBAction func panGestureRecognizer(_ sender: UIPanGestureRecognizer) {
+        print("gogogo")
+    }
         
 }
 
